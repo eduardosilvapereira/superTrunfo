@@ -1,16 +1,13 @@
-public class Moto extends Carta {
+public class Moto {
     
-    private String nome;
-    private double peso;
-    private int cilindrada;
-    private double velocidade;
-    private double aceleracao;
-    private int potencia;
+    protected String nome;
+    protected double peso;
+    protected int cilindrada;
+    protected double velocidade;
+    protected double aceleracao;
+    protected int potencia;
 
-    public Moto(char letra, int numero, String nome) {
-        super(letra, numero);
-        this.nome = nome;
-    }
+    public Moto() {}
     /**
      * Getters
      */
@@ -29,16 +26,20 @@ public class Moto extends Carta {
     public void setVelocidade(double velocidade) { this.velocidade = velocidade; }
     public void setAceleracao(double aceleracao) { this.aceleracao = aceleracao; }
     public void setPotencia(int potencia) { this.potencia = potencia; }
+    
+    public void geraCarta() {
+        
+    }
+    
     /**
      * toString
      */
     public String toString () {
-        return super.toString() +
-        "\nNome: " + nome +
-        "\nPeso: " + peso +
-        "\nCilindrada: " + cilindrada +
-        "\nVelocidade: " + velocidade +
-        "\nAceleração: " + aceleracao +
-        "\nPotência: " + potencia;
+        return "Nome: " + nome +
+               "\nPeso: " + peso +
+               "\nCilindrada: " + cilindrada +
+               "\nVelocidade: " + velocidade +
+               "\nAceleração: " + aceleracao +
+               "\nPotência: " + potencia;
     }
 }

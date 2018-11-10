@@ -7,6 +7,7 @@ public class Jogo {
         
         ArrayList<Jogador> jogadores;
         ArrayList<Carta> baralho;
+        ArrayList<Carta> mesa;
         
         jogadores = new ArrayList<Jogador>();
         baralho = new ArrayList<Carta>();

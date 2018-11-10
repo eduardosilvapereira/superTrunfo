@@ -1,4 +1,4 @@
-public class Carta {
+public class Carta extends Moto {
     
     private char letra;
     private int numero;
@@ -6,6 +6,8 @@ public class Carta {
     public Carta(char letra, int numero) {
         this.letra = letra;
         this.numero = numero;
+        
+        this.geraCarta();
     }
     /**
      * Getters
@@ -21,6 +23,6 @@ public class Carta {
      * toString
      */
     public String toString () {
-        return "Carta: " + letra + numero;
+        return "Carta: " + letra + numero + super.toString();
     }
 }
