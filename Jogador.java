@@ -4,6 +4,7 @@ public class Jogador {
 
     private String nome;
     private ArrayList<Carta> cartas;
+    private Carta cartaAtiva;
     
     public Jogador(String nome) {
         this.nome = nome;
