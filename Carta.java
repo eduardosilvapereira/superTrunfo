@@ -2,10 +2,10 @@ public class Carta extends Moto {
     private char letra;
     private int numero;
 
-    public Carta(char letra, int numero) {
+    public Carta(char letra, int numero, String nome) {
+        super(nome);
         this.letra = letra;
         this.numero = numero;
-        this.geraCarta();
     }
     /**
      * Getters
