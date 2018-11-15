@@ -1,8 +1,8 @@
 public class Carta extends Moto {
-    private char letra;
+    private String letra;
     private int numero;
 
-    public Carta(char letra, int numero, String nome) {
+    public Carta(String letra, int numero, String nome) {
         super(nome);
         this.letra = letra;
         this.numero = numero;
@@ -10,17 +10,17 @@ public class Carta extends Moto {
     /**
      * Getters
      */
-    public char getLetra() { return letra; }
+    public String getLetra() { return letra; }
     public double getNumero() { return numero; }
     /**
      * Setters
      */
-    public void setLetra(char letra) { this.letra = letra; }
+    public void setLetra(String letra) { this.letra = letra; }
     public void setNumero(int numero) { this.numero = numero; }
     /**
      * toString
      */
     public String toString () {
-        return "Carta: " + letra + numero + super.toString();
+        return "Carta: " + letra + numero + "\n" + super.toString();
     }
 }

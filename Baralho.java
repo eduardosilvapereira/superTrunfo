@@ -8,26 +8,28 @@ public class Baralho {
         GeraBaralho();
     }
     
-    public boolean Adicionar (char letra, int numero, String nome) {
+    public boolean Adicionar (String letra, int numero, String nome) {
         return this.cartas.add(new Carta(letra, numero, nome));
     }
     
     public void GeraBaralho () {
-        char letra;
+        String letra = "";
         int cont = 0;
         
-        int [] nomeMoto = new String [32];
+        String [] nomeMoto = new String [32];
         nomeMoto[0] = "Harley Davidson";
         // Continuar os nomes das motos até 32
         
         for (int i = 0; i < 8; i++) {
             switch (i) {
-                case 0: letra = 'A'; break;
-                case 1: letra = 'B'; break;
-                case 2: letra = 'C'; break;
-                case 3: letra = 'D'; break;
-                case 4: letra = 'E'; break;
-                case 5: letra = 'F'; break;
+                case 0: letra = "A"; break;
+                case 1: letra = "B"; break;
+                case 2: letra = "C"; break;
+                case 3: letra = "D"; break;
+                case 4: letra = "E"; break;
+                case 5: letra = "F"; break;
+                case 6: letra = "G"; break;
+                case 7: letra = "H"; break;
                 }
             for (int numero = 1; numero <= 4; numero++) {
                 Adicionar(letra, numero, nomeMoto[cont]);

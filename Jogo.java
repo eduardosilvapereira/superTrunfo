@@ -4,14 +4,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Jogo {
     public static void main (String [] args) {
-    	Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         
         int opcao;
-    	
-    	ArrayList<Jogador> jogadores;
-        ArrayList<Carta> mesa;
-        jogadores = new ArrayList<Jogador>();
-    	
+        
         do {
             System.out.println("SUPER TRUNFO");
             System.out.println("==============================");
@@ -31,7 +27,43 @@ public class Jogo {
     }
     
     public static void Jogar () {
+        // Cria o Baralho
+        Baralho mesa = new Baralho();
         
+        // Cria os Jogadores
+        ArrayList<Jogador> jogadores;
+        jogadores = CriaJogadores();
+        
+        // Embaralhar();
+        
+        // DarCartas();
+        
+        
+        
+    }
+    
+    public static ArrayList<Jogador> CriaJogadores () {
+        Scanner in = new Scanner(System.in);
+        
+        ArrayList<Jogador> jogadores;
+        jogadores = new ArrayList<Jogador>();
+        
+        int num;
+        String nome;
+        
+        System.out.println("------------------------------");
+        System.out.println("Digite o número de jogadores:");
+        
+        num = in.nextInt();
+        
+        for (int i = 0; i < num; i++) {
+            System.out.printf("\nJOGADOR [%i]", i+1);
+            System.out.print("Nome: ");
+            nome = in.next();
+            jogadores.add(new Jogador(nome));
+        }
+        
+        return jogadores;
     }
     
     public static void Ranking () {
