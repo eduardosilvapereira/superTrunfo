@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Jogo {
     public static void main (String [] args) {
@@ -9,13 +8,14 @@ public class Jogo {
         int opcao;
         
         do {
-            System.out.println("SUPER TRUNFO");
+            System.out.println("\nSUPER TRUNFO");
             System.out.println("==============================");
-            System.out.println("OPÇOES:");
+            System.out.println("\nOPÇOES:");
             System.out.println("1 - Jogar");
             System.out.println("2 - Ranking");
-            System.out.println("3 - Sair:");
+            System.out.println("3 - Sair");
             
+            System.out.print("\nDigite uma opção:");
             opcao = in.nextInt();
             switch (opcao) {
                 case 1: Jogar(); break;
@@ -23,7 +23,8 @@ public class Jogo {
                 } 
         } while (opcao != 3);
         
-        System.out.println("PROGRAMA ENCERRADO");
+        System.out.println("\n[ PROGRAMA ENCERRADO ]");
+        System.exit(1);
     }
     
     public static void Jogar () {
@@ -33,6 +34,7 @@ public class Jogo {
         // Cria os Jogadores
         ArrayList<Jogador> jogadores;
         jogadores = CriaJogadores();
+        ExibeJogadores(jogadores);
         
         // Embaralhar();
         
@@ -52,18 +54,30 @@ public class Jogo {
         String nome;
         
         System.out.println("------------------------------");
-        System.out.println("Digite o número de jogadores:");
+        System.out.printf("Digite o número de jogadores: ");
         
         num = in.nextInt();
         
+        System.out.println("Digite os nomes:");
         for (int i = 0; i < num; i++) {
-            System.out.printf("\nJOGADOR [%i]", i+1);
-            System.out.print("Nome: ");
+            System.out.printf("JOGADOR [%d] -> ", (i + 1));
             nome = in.next();
             jogadores.add(new Jogador(nome));
         }
         
         return jogadores;
+    }
+    
+    public static void ExibeJogadores (ArrayList<Jogador> jogadores) {
+        Jogador jogador;
+        
+        System.out.println("------------------------------");
+        System.out.println("Lista de Jogadores:");
+        
+        for (int i = 0; i < jogadores.size(); i++) {
+            jogador = jogadores.get(i);
+            System.out.println(jogador.toString(i+1));
+        }
     }
     
     public static void Ranking () {

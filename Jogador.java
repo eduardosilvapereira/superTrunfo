@@ -20,7 +20,14 @@ public class Jogador {
     /**
      * toString
      */
-    public String toString () {
-        return "Jogador: " + nome;
+    public String toString (int num) {
+        String str;
+        
+        if (num > 0) {
+            str = "Jogador [" + num + "]: " + nome;
+        } else {
+            str = "Jogador: " + nome;
+        }
+        return str;
     }
 }
