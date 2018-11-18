@@ -11,7 +11,7 @@ public class Carta extends Moto {
      * Getters
      */
     public String getLetra() { return letra; }
-    public double getNumero() { return numero; }
+    public int getNumero() { return numero; }
     /**
      * Setters
      */
@@ -21,6 +21,6 @@ public class Carta extends Moto {
      * toString
      */
     public String toString () {
-        return "Carta: " + letra + numero + "\n" + super.toString();
+        return "CARTA: " + letra + numero + "\n" + super.toString();
     }
 }

@@ -8,7 +8,8 @@ public class Jogo {
         int opcao;
         
         do {
-            System.out.println("\nSUPER TRUNFO");
+            System.out.println("\n==============================");
+            System.out.println("SUPER TRUNFO");
             System.out.println("==============================");
             System.out.println("\nOPÇOES:");
             System.out.println("1 - Jogar");
@@ -24,23 +25,23 @@ public class Jogo {
         } while (opcao != 3);
         
         System.out.println("\n[ PROGRAMA ENCERRADO ]");
-        System.exit(1);
+        System.exit(0);
     }
     
     public static void Jogar () {
         // Cria o Baralho
         Baralho mesa = new Baralho();
+        mesa.GeraBaralho();
+        mesa.Embaralhar();
         
         // Cria os Jogadores
         ArrayList<Jogador> jogadores;
         jogadores = CriaJogadores();
-        ExibeJogadores(jogadores);
         
-        // Embaralhar();
+        // Da as Cartas();
+        darCartas(mesa, jogadores);
         
-        // DarCartas();
-        
-        
+        exibeJogadores(jogadores);
         
     }
     
@@ -68,15 +69,39 @@ public class Jogo {
         return jogadores;
     }
     
-    public static void ExibeJogadores (ArrayList<Jogador> jogadores) {
+    public static void exibeJogadores (ArrayList<Jogador> jogadores) { // Só pra DEBUG
         Jogador jogador;
+        Baralho cartas;
         
-        System.out.println("------------------------------");
-        System.out.println("Lista de Jogadores:");
+        System.out.println("\n------------------------------");
+        System.out.println("LISTA JOGADORES:");
         
         for (int i = 0; i < jogadores.size(); i++) {
             jogador = jogadores.get(i);
+            cartas = jogador.getCartas();
+            System.out.println("------------------------------");
             System.out.println(jogador.toString(i+1));
+            if (cartas.getSize() > 0) {
+                System.out.println("Cartas:");
+                jogadores.get(i).getCartas().listarCompacto();
+            }
+            
+        }
+    }
+    
+    public static void darCartas(Baralho mesa, ArrayList<Jogador> jogadores) {
+        int aux = 0;
+        int num = mesa.getSize();
+        Carta carta;
+        Jogador jogador;
+        
+        for (int i = 0; i < num; i++) {
+            carta = mesa.getCartaByIndex(0);
+            mesa.Excluir(carta);
+            jogadores.get(aux).adicionaCarta(carta);
+            
+            aux++;
+            if (aux >= jogadores.size()) aux = 0;
         }
     }
     
