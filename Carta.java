@@ -7,19 +7,13 @@ public class Carta extends Moto {
         this.letra = letra;
         this.numero = numero;
     }
-    /**
-     * Getters
-     */
-    public String getLetra() { return letra; }
-    public int getNumero() { return numero; }
-    /**
-     * Setters
-     */
-    public void setLetra(String letra) { this.letra = letra; }
-    public void setNumero(int numero) { this.numero = numero; }
-    /**
-     * toString
-     */
+    
+    public String getLetra () { return letra; }
+    public int getNumero () { return numero; }
+    
+    public void setLetra (String letra) { this.letra = letra; }
+    public void setNumero (int numero) { this.numero = numero; }
+    
     public String toString () {
         return "CARTA: " + letra + numero + "\n" + super.toString();
     }

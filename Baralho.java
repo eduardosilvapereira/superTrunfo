@@ -4,24 +4,24 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Baralho {
     private ArrayList<Carta> cartas;
 
-    public Baralho() {
-        this.cartas = new ArrayList<Carta>();
+    public Baralho () {
+        cartas = new ArrayList<Carta>();
     }
     
     public boolean Adicionar (Carta carta) {
-        return this.cartas.add(carta);
+        return cartas.add(carta);
     }
     
     public boolean Excluir (Carta carta) {
-        return this.cartas.remove(carta);
+        return cartas.remove(carta);
     }
     
     public Carta getCartaByIndex (int index) {
-        return this.cartas.get(index);
+        return cartas.get(index);
     }
     
     public int getSize () {
-        return this.cartas.size();
+        return cartas.size();
     }
     
     public void GeraBaralho () {
@@ -46,7 +46,7 @@ public class Baralho {
                 }
             for (int numero = 1; numero <= 4; numero++) {
                 carta = new Carta(letra, numero, nomeMoto[cont]);
-                this.cartas.add(carta);
+                cartas.add(carta);
                 cont++;
             }
         }

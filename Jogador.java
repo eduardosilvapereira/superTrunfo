@@ -16,7 +16,7 @@ public class Jogador {
     public void setNome (String nome) { this.nome = nome; }
 
     public void adicionaCarta (Carta carta) {
-        this.cartas.Adicionar(carta);
+        cartas.Adicionar(carta);
     }
     
     public String toString (int num) {
