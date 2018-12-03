@@ -12,6 +12,7 @@ public class Jogador {
 
     public String getNome () { return nome; }
     public Baralho getCartas () { return cartas; }
+    public Carta getPrimeiraCarta () { return cartas.getCartaByIndex(0); }
     
     public void setNome (String nome) { this.nome = nome; }
 

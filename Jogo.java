@@ -117,10 +117,9 @@ public class Jogo {
     
     public static void Jogar () {
         Scanner in = new Scanner(System.in);
+        int opcao;
         Carta carta;
         Jogador jogador;
-        int jogadorVez = 0;
-        int opcao;
         
         System.out.println("\n------------------------------");
         System.out.println("JOGAR ");
@@ -140,23 +139,28 @@ public class Jogo {
         while (!jogadores.Vencedor()) {
             System.out.println("\n------------------------------");
             System.out.println("PARTIDA INICIADA");
-            System.out.println("------------------------------");
+            System.out.println("------------------------------\n");
             // Seleciona Jogador da vez
-            jogador = jogadores.getJogadorByIndex(jogadorVez);
-            System.out.println("Jogador " + (jogadorVez + 1));
+            jogador = jogadores.getJogadorDaVez();
+            System.out.println("Jogador: " + jogador.getNome());
             // Pega primeira carta do jogador da vez
             carta = jogador.getCartas().getCartaByIndex(0);
             carta.toString();
+            // Jogador define qual atributo disputará
+            do {
+                System.out.println("\nSelecione o atributo para a disputa:");
+                System.out.println("1 - Peso");
+                System.out.println("2 - Cilindrada");
+                System.out.println("3 - Velocidade");
+                System.out.println("4 - Aceleração");
+                System.out.println("5 - Potência");
+                System.out.println("5 - Potência");
+                System.out.print("Opção: ");
+                opcao = in.nextInt();
+                if (opcao < 1 || opcao > 5) System.out.println("OPÇÃO INVÁLIDA!\n");
+            } while (opcao < 1 || opcao > 5);
             
-            System.out.println("\nSelecione o atributo para a disputa:");
-            System.out.println("1 - Peso");
-            System.out.println("2 - Cilindrada");
-            System.out.println("3 - Velocidade");
-            System.out.println("4 - Aceleração");
-            System.out.println("5 - Potência");
-            System.out.println("5 - Potência");
-            System.out.print("Opção: ");
-            opcao = in.nextInt();
+            
         }
     }
     
