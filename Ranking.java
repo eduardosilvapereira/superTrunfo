@@ -25,9 +25,9 @@ public class Ranking {
     }
 
     private ArrayList<Vencedor> getVencedoresArquivo() {
+        ArrayList<Vencedor> vencedoresSalvos = new ArrayList<>();
+        
         try {
-            ArrayList<Vencedor> vencedoresSalvos = new ArrayList<>();
-
             FileReader fr = new FileReader(this.arquivo);
             BufferedReader br = new BufferedReader(fr);
 
@@ -43,11 +43,11 @@ public class Ranking {
 
             br.close();
             fr.close();
-
-            return vencedoresSalvos;
         } catch (IOException err) {
             System.out.println (err.toString());
         }
+        
+        return vencedoresSalvos;
     }
 
     private boolean setVencedoresArquivo() {
@@ -66,6 +66,7 @@ public class Ranking {
             return true;
         } catch (IOException err) {
             System.out.println (err.toString());
+            return false;
         }
     }
 
