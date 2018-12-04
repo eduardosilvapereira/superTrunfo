@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
 /*
 # SUPER TRUNFO #
 
@@ -41,9 +42,11 @@ Ficar com todas as cartas do baralho.
   Quem tiver o valor mais alto ganha as cartas da mesa.
 * O próximo jogador será o que venceu a rodada anterior. Assim prossegue o jogo até que um dos participantes fique
   com todas as cartas do baralho, vencendo a partida.
+
 * Se dois ou mais jogadores abaixam cartas com o mesmo valor máximo, os demais participantes deixam suas cartas na
   mesa e a vitória é decidida entre os que empataram. Para isso, quem escolheu inicialmente diz um novo item de sua
   próxima carta, ganhando as cartas da rodada quem tiver o valor mais alto.
+
 * Existe, entre as cartas, uma carta SUPER TRUNFO. Esta carta vence todas as cartas do baralho, independentemente
   do valor de suas características. Ela perde apenas para as cartas que tenham a letra A (1A, 2A, 3A, etc), marcada
   na parte superior de cada uma.
@@ -88,74 +91,80 @@ Ficar com todas as cartas do baralho.
 9. Uso correto dos conceitos de orientação a objetos (classes, objetos, coleções, encapsulamento, herança e polimorfismo)
 10. Documentação do sistema, através do seu diagrama de classes.
 */
+
 public class Jogo {
-    public static void main (String [] args) {
+
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        
+
         int opcao;
-        
+
         do {
             System.out.println("==============================");
             System.out.println(" SUPER TRUNFO");
-            System.out.println("==============================");
-            System.out.println("\n OPÇOES:");
+            System.out.println("==============================\n");
+            System.out.println("OPÇOES:");
             System.out.println(" 1 - Jogar");
             System.out.println(" 2 - Ranking");
             System.out.println(" 3 - Sair");
-            
+
             System.out.print("\nDigite uma opção:");
             opcao = in.nextInt();
             switch (opcao) {
-                case 1: Jogar(); break;
-                case 2: Ranking(); break;
-                } 
+                case 1:
+                    Jogar();
+                    break;
+                case 2:
+                    Ranking();
+                    break;
+            }
         } while (opcao != 3);
-        
+
         System.out.println("\n[ PROGRAMA ENCERRADO ]");
         System.exit(0);
     }
-    
-    public static void Jogar () {
+
+    private static void Jogar() {
         Scanner in = new Scanner(System.in);
         int opcao, rodada;
         Carta carta;
         Jogador jogador;
-        
+
         System.out.println("\n------------------------------");
         System.out.println(" JOGAR ");
-        
+
         // Cria o Baralho
         Baralho mesa = new Baralho();
         mesa.GeraBaralho();
         mesa.Embaralhar();
-        
+
         // Cria os Jogadores
         Jogadores jogadores = new Jogadores();
-        
+
         // Distribui as Cartas para os Jogadores();
         jogadores.darCartas(mesa);
-        
+
         System.out.println("\n##############################");
         System.out.println(" PARTIDA INICIADA");
         System.out.println("##############################");
-        
+
         rodada = 1;
         jogador = jogadores.getJogadorByIndex(0);
-        
+
         // Loop principal
         while (!jogadores.vencedorPartida()) {
             System.out.println("##############################");
             System.out.println("RODADA: " + rodada);
             System.out.println("------------------------------");
-            
+
             // Printa o Jogador da vez
             System.out.println(jogador.toString());
-            
+
             // Pega primeira carta do jogador da vez
             carta = jogador.getCartaByIndex(0);
             System.out.println(carta.toString());
-            
-            // Jogador define qual atributo disputará
+
+            // Jogador define com qual atributo disputará
             do {
                 System.out.println("\nSelecione o atributo para a disputa:");
                 System.out.println(" 1 - Peso");
@@ -167,7 +176,7 @@ public class Jogo {
                 opcao = in.nextInt();
                 if (opcao < 1 || opcao > 5) System.out.println("OPÇÃO INVÁLIDA!\n");
             } while (opcao < 1 || opcao > 5);
-            
+
             // Executa a rodada e atualiza o jogador da vez
             jogador = jogadores.vencedorRodada(jogador, opcao);
 
@@ -177,15 +186,19 @@ public class Jogo {
             System.out.println("------------------------------");
             System.out.println(jogador.toString());
             System.out.println("##############################");
-            
+
             // Passa as cartas dos perdedores para o ganhador
             jogadores.recolheCartas(jogador);
-            
+
             rodada++;
         }
+
+        // FIM DA PARTIDA
+
+        // Verifica e salva RANKING
     }
-    
-    public static void Ranking () {
-        
+
+    private static void Ranking() {
+
     }
 }
