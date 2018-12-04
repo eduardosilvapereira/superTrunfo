@@ -195,7 +195,7 @@ public class Jogo {
 
         // FIM DA PARTIDA
 
-        // Verifica e salva RANKING
+        // Verifica pontuação e salva no RANKING
     }
 
     private static void Ranking() {
