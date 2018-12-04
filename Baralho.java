@@ -33,7 +33,38 @@ public class Baralho {
 
         String[] nomeMoto = new String[32];
 
-        nomeMoto[0] = "Harley Davidson";
+        nomeMoto[0] = "Honda CB1000R"
+        nomeMoto[1] = "Yamaha XR650"
+        nomeMoto[2] = "Honda CB650R"
+        nomeMoto[3] = "Honda CB650RR"
+        nomeMoto[4] = "Suzuki Hayabusa 1300R"
+        nomeMoto[5] = "Suzuki Boulevard 1500"
+        nomeMoto[6] = "Honda Goldwing 1800"
+        nomeMoto[7] = "Harley Davidson Iron 883"
+        nomeMoto[8] = "Harley Davidson Fatboy"
+        nomeMoto[9] = "Suzuki Gladius"
+        nomeMoto[10] = "Suzuki VStorm"
+        nomeMoto[11] = "Yamaha VMAX"
+        nomeMoto[12] = "Yamaha MT-03"
+        nomeMoto[13] = "Buell vx1000"
+        nomeMoto[14] = "Yamaha Tenere 650"
+        nomeMoto[15] = "Suzuki Bandit 650"
+        nomeMoto[16] = "Suzuki Bandit 1000"
+        nomeMoto[17] = "Yamaha MT-07"
+        nomeMoto[18] = "Ducati StreetFighter 1100"
+        nomeMoto[19] = "Ducati Multistrada 1200"
+        nomeMoto[20] = "Yamaha R1"
+        nomeMoto[21] = "Yamaha RD 150"
+        nomeMoto[22] = "Honda CB 300"
+        nomeMoto[23] = "Honda CB1000RR"
+        nomeMoto[24] = "Triumph SpeedTriple 675"
+        nomeMoto[25] = "Triumph SpeedTriple 1200R"
+        nomeMoto[26] = "BMW GS310"
+        nomeMoto[27] = "BMW S1000RR"
+        nomeMoto[28] = "MV Agustta Street 1000"
+        nomeMoto[29] = "Triumph Boneville 1200"
+        nomeMoto[30] = "Honda CB750"
+        nomeMoto[31] = "Triumph Tiger 1200"
         // Continuar os nomes das motos até 32
 
         for (int i = 0; i < 8; i++) {
