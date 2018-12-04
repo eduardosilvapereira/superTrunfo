@@ -3,16 +3,18 @@ import java.util.ArrayList;
 public class Jogador {
 
     private String nome;
+    private int numero;
     private Baralho cartas;
     
-    public Jogador (String nome) {
+    public Jogador (String nome, int numero) {
         this.nome = nome;
+        this.numero = numero;
         this.cartas = new Baralho();
     }
 
     public String getNome () { return nome; }
     public Baralho getCartas () { return cartas; }
-    public Carta getPrimeiraCarta () { return cartas.getCartaByIndex(0); }
+    public Carta getCartaByIndex (int index) { return cartas.getCartaByIndex(index); }
     
     public void setNome (String nome) { this.nome = nome; }
 
@@ -20,14 +22,11 @@ public class Jogador {
         cartas.Adicionar(carta);
     }
     
-    public String toString (int num) {
-        String str;
-        
-        if (num > 0) {
-            str = "Jogador [" + num + "]: " + nome;
-        } else {
-            str = "Jogador: " + nome;
-        }
-        return str;
+    public void excluiCarta (Carta carta) {
+        cartas.Excluir(carta);
+    }
+    
+    public String toString () {
+        return "JOGADOR[" + numero + "]: " + nome + " (" + cartas.getSize() + ")";
     }
 }

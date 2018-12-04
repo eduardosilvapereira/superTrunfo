@@ -33,11 +33,11 @@ public class Moto {
     public void setPotencia (int potencia) { this.potencia = potencia; }
 
     public String toString () {
-        return "Nome: " + nome +
-               "\nPeso: " + peso +
-               "\nCilindrada: " + cilindrada +
-               "\nVelocidade: " + velocidade +
-               "\nAceleração: " + aceleracao +
-               "\nPotência: " + potencia;
+        return "Nome Moto.: " + nome +
+             "\nPeso......: " + peso +
+             "\nCilindrada: " + cilindrada +
+             "\nVelocidade: " + velocidade +
+             "\nAceleração: " + aceleracao +
+             "\nPotência..: " + potencia;
     }
 }
