@@ -15,6 +15,6 @@ public class Carta extends Moto {
     public void setNumero (int numero) { this.numero = numero; }
     
     public String toString () {
-        return "CARTA: " + letra + numero + "\n" + super.toString();
+        return "CARTA.....: " + letra + numero + "\n" + super.toString();
     }
 }
