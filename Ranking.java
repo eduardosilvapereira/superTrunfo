@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
@@ -35,9 +37,9 @@ public class Ranking {
                 String linha = br.readLine();
                 String[] partes = linha.split(";");
                 String nome = partes[0];
-                int pontuacao = Integer.parseInt(partes[1]);
+                int rodadas = Integer.parseInt(partes[1]);
 
-                Vencedor vencedor = new Vencedor(nome, pontuacao);
+                Vencedor vencedor = new Vencedor(nome, rodadas);
                 vencedoresSalvos.add(vencedor);
             }
 
@@ -56,7 +58,7 @@ public class Ranking {
             BufferedWriter bw = new BufferedWriter(fw);
 
             for (int i = 0; i < this.vencedores.size(); i++) {
-                bw.write(this.vencedores.get(i).getNome() + ";" + this.vencedores.get(i).getPontuacao());
+                bw.write(this.vencedores.get(i).getNome() + ";" + this.vencedores.get(i).getRodadas());
                 bw.newLine();
             }
 
@@ -69,16 +71,33 @@ public class Ranking {
             return false;
         }
     }
-
-    public void exibir() {
-        for (int i = 0; i < this.vencedores.size(); i++) {
-            System.out.println((i + 1) + ": " + this.vencedores.get(i).getNome() + " | " + this.vencedores.get(i).getPontuacao() + "pontos");
-        }
+        
+    private void ordenarVencedores() {
+        Collections.sort(this.vencedores, new Comparator() {
+            public int compare(Object vencedor1, Object vencedor2) {
+                Vencedor v1 = (Vencedor) vencedor1;
+                Vencedor v2 = (Vencedor) vencedor2;
+                return v1.getRodadas() < v2.getRodadas() ? -1 : (v1.getRodadas() > v2.getRodadas() ? +1 : 0);
+            }
+        });
     }
 
-    public boolean salvarVencedor(String nome, int pontuacao) {
-        Vencedor vencedor = new Vencedor(nome, pontuacao);
+    public void exibir() {
+        System.out.println("\n##############################");
+        System.out.println(" RANKING");
+        
+        for (int i = 0; i < this.vencedores.size(); i++) {
+            System.out.println("------------------------------");
+            System.out.println((i + 1) + ": " + this.vencedores.get(i).getNome() + " | " + this.vencedores.get(i).getRodadas() + " Rodadas");
+        }
+        
+        System.out.println("##############################");
+    }
+
+    public boolean salvarVencedor(String nome, int rodadas) {
+        Vencedor vencedor = new Vencedor(nome, rodadas);
         this.vencedores.add(vencedor);
+        this.ordenarVencedores();
         return this.setVencedoresArquivo();
     }
 }

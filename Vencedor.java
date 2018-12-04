@@ -1,26 +1,26 @@
 public class Vencedor {
 
     private String nome;
-    private int pontuacao;
+    private int rodadas;
 
-    public Vencedor(String nome, int pontuacao) {
+    public Vencedor(String nome, int rodadas) {
         this.nome = nome;
-        this.pontuacao = pontuacao;
+        this.rodadas = rodadas;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setPontuacao(int pontuacao) {
-        this.pontuacao = pontuacao;
+    public void setRodadas(int rodadas) {
+        this.rodadas = rodadas;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public int getPontuacao() {
-        return pontuacao;
+    public int getRodadas() {
+        return rodadas;
     }
 }

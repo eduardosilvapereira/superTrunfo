@@ -89,6 +89,16 @@ public class Jogadores {
         }
     }
 
+    public Jogador jogadorVencedor() {
+        Jogador vencedor = null;
+
+        for (int i = 0; i < jogadores.size(); i++) {
+            if (jogadores.get(i).getCartas().getSize() == 32) vencedor = jogadores.get(i);
+        }
+        
+        return vencedor;
+    }
+
     public Jogador vencedorRodada(Jogador jogador, int opcao) {
         Jogador aux, vencedor;
         Carta carta;

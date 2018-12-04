@@ -1,0 +1,4 @@
+Lucas;32
+Eduardo;100
+Eduardo;200
+Fernando;400

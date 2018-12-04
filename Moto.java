@@ -1,4 +1,5 @@
 import java.util.concurrent.ThreadLocalRandom;
+import java.text.DecimalFormat;
 
 public class Moto {
 
@@ -44,10 +45,10 @@ public class Moto {
 
     public String toString() {
         return "Nome Moto.: " + nome +
-                "\nPeso......: " + peso +
+                "\nPeso......: " + new DecimalFormat("#.0#").format(peso) +
                 "\nCilindrada: " + cilindrada +
-                "\nVelocidade: " + velocidade +
-                "\nAceleração: " + aceleracao +
+                "\nVelocidade: " + new DecimalFormat("#.0#").format(velocidade) +
+                "\nAceleração: " + new DecimalFormat("#.0#").format(aceleracao) +
                 "\nPotência..: " + potencia;
     }
 }

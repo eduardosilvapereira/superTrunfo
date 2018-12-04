@@ -115,7 +115,7 @@ public class Jogo {
                     Jogar();
                     break;
                 case 2:
-                    Ranking();
+                    exibirRanking();
                     break;
             }
         } while (opcao != 3);
@@ -194,11 +194,20 @@ public class Jogo {
         }
 
         // FIM DA PARTIDA
-
-        // Verifica pontuação e salva no RANKING
+        System.out.println("\n##############################");
+        System.out.println(" VENCEDOR DA PARTIDA");
+        System.out.println("------------------------------");
+        System.out.println(jogador.getNome() + " | " + rodada + " Rodadas");
+        System.out.println("##############################");
+        
+        // salva no RANKING
+        Jogador vencedor = jogadores.jogadorVencedor();
+        Ranking ranking = new Ranking();
+        ranking.salvarVencedor(vencedor.getNome(), rodada);
     }
 
-    private static void Ranking() {
-
+    private static void exibirRanking() {
+        Ranking ranking = new Ranking();
+        ranking.exibir();
     }
 }
