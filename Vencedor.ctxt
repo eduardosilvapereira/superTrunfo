@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Vencedor
+comment1.params=nome\ pontuacao
+comment1.target=Vencedor(java.lang.String,\ int)
+comment2.params=nome
+comment2.target=void\ setNome(java.lang.String)
+comment3.params=pontuacao
+comment3.target=void\ setPontuacao(int)
+comment4.params=
+comment4.target=java.lang.String\ getNome()
+comment5.params=
+comment5.target=int\ getPontuacao()
+numComments=6

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Ranking
+comment1.params=
+comment1.target=Ranking()
+comment2.params=vencedor
+comment2.target=int\ getPosicao(Vencedor)
+comment3.params=
+comment3.target=java.util.ArrayList\ getVencedoresArquivo()
+comment4.params=
+comment4.target=boolean\ setVencedoresArquivo()
+comment5.params=nome\ pontuacao
+comment5.target=boolean\ salvarVencedor(java.lang.String,\ int)
+numComments=6
